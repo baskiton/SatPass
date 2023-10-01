@@ -1,0 +1,11 @@
+{
+    "lat": 0.0,
+    "lon": 0.0,
+    "alt": 0.0,
+    "temp": 20.0,
+    "timedelta": 1.0,
+    "min_elev": 15.0,
+    "break_elev": 5.0,
+    "tle_file": "/path/to/tle.txt",
+    "out_dir": "/path/to/output/directory"
+}
