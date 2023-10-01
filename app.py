@@ -49,7 +49,6 @@ def calculate_pass(cfg, ephems, sat_name, start_t, n):
     while n > 0:
         observer.date = start_t
         rise_t, rise_az, culm_t, culm_alt, set_t, set_az = observer.next_pass(sat, False)
-        print(set_t, type(set_t), ephem.to_timezone(set_t, dt.timezone.utc))
         if culm_alt / ephem.degree < cfg['min_elev']:
             start_t = ephem.to_timezone(set_t, dt.timezone.utc) + dt.timedelta(minutes=1)
             continue
@@ -78,6 +77,7 @@ def calculate_pass(cfg, ephems, sat_name, start_t, n):
                 observer.date = start_t
                 sat.compute(observer)
                 elev = sat.alt / ephem.degree
+        print(fp)
 
 
 def main(args):
